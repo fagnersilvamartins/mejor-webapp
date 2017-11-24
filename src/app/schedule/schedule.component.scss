@@ -1,0 +1,31 @@
+p {
+    margin: 0;
+    text-align: center;
+}
+
+.jumbotron {
+    padding: 2rem 2rem;
+}
+
+.container-panel {
+    padding: 0;
+    margin: 15px -15px 15px -15px;
+}
+
+.container-panel div {
+    padding: 16px;
+    cursor: pointer;
+}
+
+.container-panel div.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pane-time div {
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #e6e6e6;
+    margin: 0;
+}
+
