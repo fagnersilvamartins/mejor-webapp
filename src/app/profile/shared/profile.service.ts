@@ -1,19 +1,16 @@
-import { TokenManagerService } from './../../core/token-manager.service';
 import { Injectable } from '@angular/core';
-
-import { Http, RequestOptions } from '@angular/http';
 import { HttpHeaders } from '@angular/common/http';
 
 import { Api } from './../../core/api';
 import { User } from './../../models/user';
+import { TokenManagerService } from './../../core/token-manager.service';
 
 @Injectable()
 export class ProfileService {
 
   constructor(
     private api: Api,
-    private tokenService: TokenManagerService,
-    private http: Http
+    private tokenService: TokenManagerService
   ) { }
 
   getUser(id: number) {

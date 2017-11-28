@@ -16,6 +16,7 @@ import { Api } from './core/api';
 import { TokenManagerService } from './core/token-manager.service';
 import { AuthenticationService } from './instagram-authentication-callback/shared/authentication.service';
 import { ProfileService } from './profile/shared/profile.service';
+import { ScheduleService } from './schedule/shared/schedule.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProfileService } from './profile/shared/profile.service';
   providers: [
     Api,
     AuthenticationService,
+    ScheduleService,
     TokenManagerService,
     ProfileService
   ],
