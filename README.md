@@ -2,7 +2,7 @@
 
 1 - go to project root
 2 - execute `npm install` and `ng serve`
-3 - Navigate to `http://localhost:4200/`
+3 - Navigate to `http://localhost:5001/`
 
 # Dev dependencies
 
