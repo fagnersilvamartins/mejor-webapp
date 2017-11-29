@@ -17,6 +17,7 @@ import { TokenManagerService } from './core/token-manager.service';
 import { AuthenticationService } from './instagram-authentication-callback/shared/authentication.service';
 import { ProfileService } from './profile/shared/profile.service';
 import { ScheduleService } from './schedule/shared/schedule.service';
+import { ListScheduleComponent } from './list-schedule/list-schedule.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ScheduleService } from './schedule/shared/schedule.service';
     LoginComponent,
     ProfileComponent,
     ScheduleComponent,
-    InstagramAuthenticationCallbackComponent
+    InstagramAuthenticationCallbackComponent,
+    ListScheduleComponent
   ],
   imports: [
     HttpModule,

@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs/Subscription';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,6 +19,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private scheduleService: ScheduleService
   ) { }
 
@@ -32,7 +33,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   save() {
     this.scheduleService.saveSchedule({ userId: this.userId, dateId: this.dateSelected._id }).subscribe((dates: any) => {
-      console.log('success');
+      this.router.navigate(['/list']);
     });
   }
 
