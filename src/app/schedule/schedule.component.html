@@ -11,30 +11,22 @@
   </div>
 </div>
 
-<div class="col-md-6 container" *ngIf="!dateSchedule">
+<div class="col-md-7 container" *ngIf="!dateSelected">
   <div class="row justify-content-center">
     <p>December 2017</p>
   </div>
   <div class="row container-panel">
-    <div *ngFor="let d of dates" class="col-sm justify-content-center" [ngClass]="{'active': dateSelected == d}" (click)="selectDate(d)">
-      <p>{{d.date | date:'EEE'}}</p>
-      <p>{{d.date | date:'d'}}</p>
+    <div *ngFor="let d of dates" class="col-2 justify-content-center" [ngClass]="{'disable': !d.enable}" (click)="selectDate(d)">
+      <p>{{d.date | date:'EEE dd'}}</p>
+      <p>{{d.date | date:'hh:mm a'}}</p>
     </div>
   </div>
 </div>
 
-<div class="col-md-6 container" *ngIf="!dateSchedule">
-  <div class="row pane-time">
-    <div class="col-6" *ngFor="let t of dateSelected.times" (click)="selectTime(t)">
-      <p>{{t}}</p>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-6 container" *ngIf="dateSchedule">  
+<div class="col-md-6 container" *ngIf="dateSelected">
   <div class="row align-items-start justify-content-between pane-schedule">
-      <p>{{dateSchedule | date: 'medium'}}</p>
-      <button type="button" class="btn btn-primary" (click)="editDateSchedule()">Edit</button>
+    <p>{{dateSelected.date | date: 'medium'}}</p>
+    <button type="button" class="btn btn-primary" (click)="editDateSchedule()">Edit</button>
   </div>
   <button type="button" class="btn btn-primary btn-block" (click)="save()">Schedule</button>
 </div>

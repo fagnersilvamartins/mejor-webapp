@@ -16,10 +16,10 @@ export class ScheduleService {
     return this.api.get('schedule/alldates?access_token=' + this.tokenService.getToken(), {});
   }
 
-  saveSchedule(schedule: { userId: number, date: Date }) {
+  saveSchedule(schedule: { userId: number, dateId: number }) {
     const body = {
       "id_user": schedule.userId,
-      "date": schedule.date
+      "id_date": schedule.dateId
     };
     return this.api.post('schedule/?access_token=' + this.tokenService.getToken(),
       body,

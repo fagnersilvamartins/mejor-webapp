@@ -15,8 +15,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
   routeParams: Subscription;
   dates: any = [];
   userId: number;
-  dateSelected: any = { times: [] };
-  dateSchedule: Date;
+  dateSelected: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,16 +26,12 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     this.dateSelected = date;
   }
 
-  selectTime(time) {
-    this.dateSchedule = new Date(this.dateSelected.date);
-  }
-
   editDateSchedule() {
-    this.dateSchedule = null;
+    this.dateSelected = null;
   }
 
   save() {
-    this.scheduleService.saveSchedule({ userId: this.userId, date: this.dateSchedule }).subscribe((dates: any) => {
+    this.scheduleService.saveSchedule({ userId: this.userId, dateId: this.dateSelected._id }).subscribe((dates: any) => {
       console.log('success');
     });
   }
@@ -47,9 +42,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
         this.userId = params['id'];
         this.scheduleService.getDates().subscribe((dates: any) => {
           this.dates = dates;
-          if (this.dates.length > 0) {
-            this.dateSelected = this.dates[0];
-          }
         });
       }
     });

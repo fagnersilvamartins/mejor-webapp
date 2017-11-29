@@ -17,17 +17,15 @@ p {
     cursor: pointer;
 }
 
-.container-panel div.active, .pane-time div:hover {
+.container-panel div:hover:not(.disable) {
     background-color: #007bff;
     color: white;
     cursor: pointer;
 }
 
-.pane-time div {
-    background-color: white;
-    padding: 5px;
-    border: 1px solid #e6e6e6;
-    margin: 0;
+.container-panel div.disable {
+    background-color: #e6e6e6;
+    pointer-events: none;
 }
 
 .pane-schedule {
